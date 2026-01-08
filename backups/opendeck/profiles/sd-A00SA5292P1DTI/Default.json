@@ -34,7 +34,7 @@
       "context": "Keypad.0.0",
       "current_state": 0,
       "settings": {
-        "down": "/home/duane/.local/bin/streamdeck/vol-down.sh",
+        "down": "/home/duane/.local/bin/streamdeck/vol-0.sh",
         "file": "",
         "rotate": "",
         "show": false,
@@ -89,7 +89,7 @@
       "context": "Keypad.1.0",
       "current_state": 0,
       "settings": {
-        "down": "/home/duane/.local/bin/streamdeck/vol-up.sh",
+        "down": "/home/duane/.local/bin/streamdeck/vol-100.sh",
         "file": "",
         "rotate": "",
         "show": false,
@@ -144,7 +144,7 @@
       "context": "Keypad.2.0",
       "current_state": 0,
       "settings": {
-        "down": "/home/duane/.local/bin/streamdeck/mic-mute.sh",
+        "down": "/home/duane/.local/bin/streamdeck/vol-info.sh",
         "file": "",
         "rotate": "",
         "show": false,
@@ -254,7 +254,7 @@
       "context": "Keypad.4.0",
       "current_state": 0,
       "settings": {
-        "down": "/home/duane/.local/bin/streamdeck/sleep.sh",
+        "down": "/home/duane/.local/bin/streamdeck/spotify-info.sh",
         "file": "",
         "rotate": "",
         "show": false,
@@ -474,7 +474,7 @@
       "context": "Keypad.8.0",
       "current_state": 0,
       "settings": {
-        "down": "/home/duane/.local/bin/streamdeck/deeprock.sh",
+        "down": "/home/duane/.local/bin/streamdeck/valheim.sh",
         "file": "",
         "rotate": "",
         "show": false,
@@ -529,7 +529,7 @@
       "context": "Keypad.9.0",
       "current_state": 0,
       "settings": {
-        "down": "/home/duane/.local/bin/streamdeck/vol-mute.sh",
+        "down": "/home/duane/.local/bin/streamdeck/deeprock.sh",
         "file": "",
         "rotate": "",
         "show": false,
@@ -770,7 +770,61 @@
         }
       ]
     },
-    null
+    {
+      "action": {
+        "controllers": [
+          "Keypad",
+          "Encoder"
+        ],
+        "disable_automatic_states": false,
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "name": "Run Command",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "Run a command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.14.0",
+      "current_state": 0,
+      "settings": {
+        "down": "/home/duane/.local/bin/streamdeck/sleep.sh",
+        "file": "",
+        "rotate": "",
+        "show": false,
+        "up": ""
+      },
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#ffffff",
+          "family": "Liberation Sans",
+          "image": "0.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        }
+      ]
+    }
   ],
   "sliders": []
 }

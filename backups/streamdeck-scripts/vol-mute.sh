@@ -2,7 +2,7 @@
 # Toggle volume mute and update Stream Deck icon
 
 ICONS_DIR="/home/duane/.local/bin/streamdeck/icons"
-BUTTON_IMG="/home/duane/.var/app/me.amankhanna.opendeck/config/opendeck/images/sd-A00SA5292P1DTI/Default/Keypad.9.0/0.png"
+BUTTON_IMG="/home/duane/.var/app/me.amankhanna.opendeck/config/opendeck/images/sd-A00SA5292P1DTI/Default/Keypad.4.0/0.png"
 
 # Toggle mute
 pactl set-sink-mute @DEFAULT_SINK@ toggle

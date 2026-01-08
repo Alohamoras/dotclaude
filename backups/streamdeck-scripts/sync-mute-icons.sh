@@ -4,7 +4,7 @@
 
 ICONS_DIR="/home/duane/.local/bin/streamdeck/icons"
 MIC_IMG="/home/duane/.var/app/me.amankhanna.opendeck/config/opendeck/images/sd-A00SA5292P1DTI/Default/Keypad.2.0/0.png"
-VOL_IMG="/home/duane/.var/app/me.amankhanna.opendeck/config/opendeck/images/sd-A00SA5292P1DTI/Default/Keypad.9.0/0.png"
+VOL_IMG="/home/duane/.var/app/me.amankhanna.opendeck/config/opendeck/images/sd-A00SA5292P1DTI/Default/Keypad.4.0/0.png"
 
 # Sync mic mute icon
 if pactl get-source-mute @DEFAULT_SOURCE@ | grep -q "yes"; then

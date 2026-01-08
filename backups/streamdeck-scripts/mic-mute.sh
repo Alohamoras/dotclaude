@@ -7,11 +7,9 @@ BUTTON_IMG="/home/duane/.var/app/me.amankhanna.opendeck/config/opendeck/images/s
 # Toggle mute
 pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-# Check new state and update icon
+# Check new state and update icon file
 if pactl get-source-mute @DEFAULT_SOURCE@ | grep -q "yes"; then
-    # Muted - show red icon
     cp "$ICONS_DIR/mic-muted-288.png" "$BUTTON_IMG"
 else
-    # Unmuted - show green icon
     cp "$ICONS_DIR/mic-unmuted-288.png" "$BUTTON_IMG"
 fi
