@@ -34,21 +34,21 @@ Manage the Elgato Stream Deck MK.2 (15 buttons) running OpenDeck on Linux Mint.
 ### Current Button Assignments
 | Button | Script | Function |
 |--------|--------|----------|
-| 0 | vol-down.sh | Volume down |
-| 1 | vol-up.sh | Volume up |
-| 2 | mic-mute.sh | Toggle mic mute |
+| 0 | vol-0.sh | Set volume to 0% |
+| 1 | vol-100.sh | Set volume to 100% |
+| 2 | vol-info.sh | Show current volume |
 | 3 | screenshot.sh | Take screenshot |
-| 4 | sleep.sh | Suspend system |
+| 4 | spotify-info.sh | Show Spotify track info |
 | 5 | spotify-prev.sh | Spotify previous track |
 | 6 | spotify-play.sh | Spotify play/pause |
 | 7 | spotify-next.sh | Spotify next track |
-| 8 | deeprock.sh | Launch Deep Rock Galactic |
-| 9 | vol-mute.sh | Toggle volume mute |
+| 8 | valheim.sh | Launch Valheim (BepInEx) |
+| 9 | deeprock.sh | Launch Deep Rock Galactic |
 | 10 | browser.sh | Open browser |
 | 11 | terminal.sh | Open terminal |
 | 12 | files.sh | Open file manager (Nemo) |
 | 13 | lock.sh | Lock screen |
-| 14 | (empty) | Not configured |
+| 14 | sleep.sh | Suspend system |
 
 ## Instructions
 
