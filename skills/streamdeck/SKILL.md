@@ -34,8 +34,8 @@ Manage the Elgato Stream Deck MK.2 (15 buttons) running OpenDeck on Linux Mint.
 ### Current Button Assignments
 | Button | Script | Function |
 |--------|--------|----------|
-| 0 | vol-0.sh | Set volume to 0% |
-| 1 | vol-100.sh | Set volume to 100% |
+| 0 | desktop-left.sh | Cycle to previous desktop (wraps) |
+| 1 | desktop-right.sh | Cycle to next desktop (wraps) |
 | 2 | vol-info.sh | Show current volume |
 | 3 | screenshot.sh | Take screenshot |
 | 4 | spotify-info.sh | Show Spotify track info |
