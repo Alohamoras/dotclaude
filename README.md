@@ -7,7 +7,8 @@ Personal Claude Code configuration, skills, and customizations.
 ```
 dotclaude/
 ├── skills/                    # Claude Code skills
-│   └── streamdeck/            # Stream Deck management skill
+│   ├── streamdeck/            # Stream Deck management skill
+│   └── oxide-index/           # Oxide Computer GitHub org explorer
 ├── backups/                   # Configuration backups
 │   ├── opendeck/              # OpenDeck profiles & images
 │   ├── streamdeck-scripts/    # Button scripts & icons
@@ -73,6 +74,26 @@ Manage Elgato Stream Deck buttons, scripts, and icons on Linux Mint with OpenDec
    ```
 
 7. Unplug/replug Stream Deck and launch OpenDeck.
+
+### oxide-index
+
+Query the Oxide Computer GitHub org — find where things are implemented, how repos
+relate, and browse open PRs/issues across all oxidecomputer repos.
+
+**Triggers:** "Where is X implemented?", "How does propolis depend on crucible?",
+"Show open PRs in omicron", `/oxide-index search 'partition table'`
+
+**Requires:** A GitHub PAT with read-only org access stored at
+`~/.config/oxide/gh-readonly-token`. Required permissions (fine-grained,
+oxidecomputer org): Metadata:Read, Contents:Read, Pull requests:Read, Issues:Read.
+
+**First-time setup:**
+```bash
+mkdir -p ~/.config/oxide
+echo 'github_pat_YOUR_TOKEN_HERE' > ~/.config/oxide/gh-readonly-token
+chmod 600 ~/.config/oxide/gh-readonly-token
+bash ~/.claude/skills/oxide-index/scripts/refresh.sh
+```
 
 ## Requirements
 
