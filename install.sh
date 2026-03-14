@@ -46,6 +46,45 @@ if [ -d "$SCRIPT_DIR/commands" ]; then
     done
 fi
 
+# Install hooks into ~/.claude/settings.json
+SETTINGS_FILE="$CLAUDE_DIR/settings.json"
+
+install_hook() {
+    local hook_name="$1"
+    local hook_path="$SCRIPT_DIR/hooks/$hook_name"
+    local matcher="$2"
+
+    if [ ! -f "$hook_path" ]; then
+        echo "Warning: Hook not found: $hook_path"
+        return
+    fi
+
+    # Create settings.json if it doesn't exist
+    if [ ! -f "$SETTINGS_FILE" ]; then
+        echo '{}' > "$SETTINGS_FILE"
+    fi
+
+    # Check if the hook command is already registered
+    if jq -e --arg cmd "$hook_path" \
+        '.hooks.PreToolUse[]?.hooks[]? | select(.command == $cmd)' \
+        "$SETTINGS_FILE" > /dev/null 2>&1; then
+        echo "Hook already installed: $hook_name"
+        return
+    fi
+
+    # Add the hook entry
+    jq --arg cmd "$hook_path" --arg matcher "$matcher" \
+        '.hooks.PreToolUse = (.hooks.PreToolUse // []) + [{
+            "matcher": $matcher,
+            "hooks": [{"type": "command", "command": $cmd}]
+        }]' "$SETTINGS_FILE" > "${SETTINGS_FILE}.tmp" \
+        && mv "${SETTINGS_FILE}.tmp" "$SETTINGS_FILE"
+
+    echo "Installed hook: $hook_name (matcher: $matcher)"
+}
+
+install_hook "oxide-readonly-guard.sh" "Bash"
+
 echo ""
 echo "Installation complete!"
-echo "Skills are now available in Claude Code."
+echo "Skills and hooks are now available in Claude Code."

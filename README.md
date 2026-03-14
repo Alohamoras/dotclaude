@@ -14,7 +14,8 @@ dotclaude/
 │   ├── streamdeck-scripts/    # Button scripts & icons
 │   └── setup-streamdeck.sh    # udev rules setup
 ├── commands/                  # Slash commands (future)
-└── hooks/                     # Custom hooks (future)
+└── hooks/                     # PreToolUse hooks
+    └── oxide-readonly-guard.sh  # Blocks write ops against oxidecomputer
 ```
 
 ## Installation
@@ -93,6 +94,32 @@ mkdir -p ~/.config/oxide
 echo 'github_pat_YOUR_TOKEN_HERE' > ~/.config/oxide/gh-readonly-token
 chmod 600 ~/.config/oxide/gh-readonly-token
 bash ~/.claude/skills/oxide-index/scripts/refresh.sh
+```
+
+## Hooks
+
+### oxide-readonly-guard
+
+A `PreToolUse` hook on the `Bash` tool that blocks write operations when using
+the oxide read-only PAT. It catches `gh` mutations (pr create/merge/close, issue
+create/edit/delete, repo create/fork, release create, secret/variable set, and
+mutating `gh api` methods) as well as `git push` — any command that references
+the oxide token or targets `oxidecomputer`.
+
+The hook is automatically installed into `~/.claude/settings.json` by
+`./install.sh`. To install manually:
+
+```bash
+# Add to ~/.claude/settings.json under hooks.PreToolUse:
+{
+  "matcher": "Bash",
+  "hooks": [
+    {
+      "type": "command",
+      "command": "/path/to/dotclaude/hooks/oxide-readonly-guard.sh"
+    }
+  ]
+}
 ```
 
 ## Requirements
